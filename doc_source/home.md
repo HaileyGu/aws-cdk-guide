@@ -1,22 +1,22 @@
-# What is the AWS CDK?<a name="home"></a>
+# AWS CDK란 무엇입니까?<a name="home"></a>
 
-Welcome to the *AWS Cloud Development Kit \(AWS CDK\) Developer Guide*\. This document provides information about the AWS CDK, which is a software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation\.
+*AWS Cloud Development Kit \(AWS CDK\) 개발자 안내서* 에 오신 것을 환영합니다\. 이 문서는 코드에서 클라우드 인프라를 정의하고 AWS CloudFormation을 통해 프로비저닝하기 위한 소프트웨어 개발 프레임워크인 AWS CDK에 대한 정보를 제공합니다\.
 
-AWS CloudFormation enables you to:
-+ Create and provision AWS infrastructure deployments predictably and repeatedly\.
-+ Leverage AWS products such as Amazon EC2, Amazon Elastic Block Store, Amazon SNS, Elastic Load Balancing, and Auto Scaling\.
-+ Build highly reliable, highly scalable, cost\-effective applications in the cloud without worrying about creating and configuring the underlying AWS infrastructure\.
-+ Use a template file to create and delete a collection of resources together as a single unit \(a stack\)\.
+AWS CloudFormation을 통해 다음을 수행할 수 있습니다:
++ 예측 가능하고 반복 가능한 AWS 인프라 배포의 생성 및 프로비저닝\.
++ Amazon EC2, Amazon Elastic Block Store, Amazon SNS, Elastic Load Balancing 및 Auto Scaling과 같은 AWS 제품 활용\.
++ 기본 AWS 인프라 생성 및 구성에 대한 걱정 없이 클라우드에서 안정성, 확장성이 뛰어나고 비용 효율적인 애플리케이션 구축\.
++ 템플릿 파일을 사용하여 리소스들의 모음을 단일 자원\(Stack\)으로 생성 및 삭제\.
 
-Use the AWS CDK to define your cloud resources in a familiar programming language\. The AWS CDK supports TypeScript, JavaScript, Python, Java, and C\#/\.Net\.
+AWS CDK를 사용하여 익숙한 프로그래밍 언어로 클라우드 리소스를 정의하십시오. AWS CDK는 TypeScript, JavaScript, Python, Java 및 C\#/\.Net을 지원합니다\.
 
-Developers can use one of the supported programming languages to define reusable cloud components known as [Constructs](constructs.md)\. You compose these together into [Stacks](stacks.md) and [Apps](apps.md)\.
+개발자는 지원되는 프로그래밍 언어 중 하나를 사용하여 [Constructs](constructs.md)라는 재사용 가능한 클라우드 구성 요소를 정의할 수 있습니다\. 이것들을 [Stacks](stacks.md) 및 [Apps](apps.md)을 구성하는데 사용할 수 있습니다\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/cdk/latest/guide/images/AppStacks.png)
+![\[이미지를 찾을 수 없습니다\]](http://docs.aws.amazon.com/cdk/latest/guide/images/AppStacks.png)
 
-## Why use the AWS CDK?<a name="why_use_cdk"></a>
+## AWS CDK를 사용해야 하는 이유<a name="why_use_cdk"></a>
 
-Let's look at the power of the AWS CDK\. Here is some code in an AWS CDK project to create an AWS Fargate service \(this is the code we use in the [Creating an AWS Fargate service using the AWS CDK](ecs_example.md)\)\.
+AWS CDK의 강력한 기능을 살펴보겠습니다. 다음은 AWS Fargate 서비스를 생성하는 AWS CDK 프로젝트의 코드입니다. 다음은 \([AWS CDK를 사용한 AWS Fargate 서비스 생성](ecs_example.md)\)에 사용된 코드입니다\.
 
 ------
 #### [ TypeScript ]
@@ -176,7 +176,7 @@ public class MyEcsConstructStack : Stack
 
 ------
 
-This class produces an AWS CloudFormation [template of more than 500 lines](https://github.com/awsdocs/aws-cdk-guide/blob/master/doc_source/my_ecs_construct-stack.yaml); deploying the AWS CDK app produces more than 50 resources of the following types\.
+이 클래스는 다음의 AWS CloudFormation을 생성합니다\. [500 줄 이상의 템플릿](https://github.com/awsdocs/aws-cdk-guide/blob/master/doc_source/my_ecs_construct-stack.yaml); AWS CDK 앱을 배포하면 다음 유형의 리소스가 50개 이상 생성됩니다\.
 +  [AWS::EC2::EIP](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html) 
 +  [AWS::EC2::InternetGateway](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html) 
 +  [AWS::EC2::NatGateway](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html) 
@@ -197,58 +197,58 @@ This class produces an AWS CloudFormation [template of more than 500 lines](http
 +  [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html) 
 +  [AWS::Logs::LogGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html) 
 
-Other advantages of the AWS CDK include:
-+ Use logic \(if statements, for\-loops, etc\) when defining your infrastructure
-+ Use object\-oriented techniques to create a model of your system
-+ Define high level abstractions, share them, and publish them to your team, company, or community
-+ Organize your project into logical modules
-+ Share and reuse your infrastructure as a library
-+ Testing your infrastructure code using industry\-standard protocols
-+ Use your existing code review workflow
-+ Code completion within your IDE  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/cdk/latest/guide/images/CodeCompletion.png)
+AWS CDK의 다른 장점은 다음과 같습니다:
++ 인프라를 정의할 때 조건문 \(if 문, for 루프문 등\) 사용
++ 객체 지향 기술을 사용하여 시스템 모델 생성
++ 고 수준의 추상화를 정의하고, 공유할 수 있으며, 팀, 회사 또는 커뮤니티에 배포 가능
++ 프로젝트를 논리 모듈로 구성
++ 인프라를 라이브러리로 공유 및 재사용
++ 산업 표준 프로토콜을 사용하여 인프라 코드 테스트
++ 기존 코드 리뷰 워크 플로우 사용
++ IDE 내에서 코드 완성  
+![\[이미지를 찾을 수 없습니다\]](http://docs.aws.amazon.com/cdk/latest/guide/images/CodeCompletion.png)
 
-## Developing with the AWS CDK<a name="developing"></a>
+## AWS CDK로 개발하는 방법<a name="developing"></a>
 
-Code snippets and longer examples are available in the AWS CDK's supported programming languages: TypeScript, JavaScript, Python, Java, and C\#\. See [AWS CDK examples](about_examples.md) for a list of the examples\.
+코드 스니펫과 더 긴 예제는 AWS CDK에서 지원되는 프로그래밍 언어 \(TypeScript, JavaScript, Python, Java 및 C\#\)으로 제공됩니다\. 예제 목록은 [AWS CDK 예제](about_examples.md)를 참조하십시오\.
 
-The [AWS CDK tools](tools.md) is a command line tool for interacting with CDK apps\. It enables developers to synthesize artifacts such as AWS CloudFormation templates, deploy stacks to development AWS accounts, and diff against a deployed stack to understand the impact of a code change\.
+[AWS CDK 도구](tools.md)는 CDK 앱과 상호 작용하기 위한 커맨드 라인 도구입니다\. 개발자는 AWS CloudFormation 템플릿과 같은 아티팩트를 합성하고 스택을 AWS 개발 계정에 배포할 수 있으며, 배포된 스택과 비교하여 코드 변경의 영향을 이해할 수 있습니다\.
 
-The [AWS Construct Library](constructs.md) includes a module for each AWS service with constructs that offer rich APIs that encapsulate the details of how to create resources for an Amazon or AWS service\. The aim of the AWS Construct Library is to reduce the complexity and glue logic required when integrating various AWS services to achieve your goals on AWS\.
+[AWS Construct 라이브러리](constructs.md)에는 각 AWS 서비스에 대한 모듈이 포함되어 있으며, Amazon 또는 AWS 서비스를 위한 리소스를 생성하는 방법에 대한 세부 정보를 캡슐화하는 풍부한 API를 제공합니다\. AWS Construct 라이브러리의 목표는 다양한 AWS 서비스를 통합하여 AWS 목표를 달성할 때 요구되는 복잡성과 로직의 결합도를 낮추는 것입니다\.
 
-**Note**  
-There is no charge for using the AWS CDK, but you might incur AWS charges for creating or using AWS [chargeable resources](http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#chargeable-resources), such as running Amazon EC2 instances or using Amazon S3 storage\. Use the [AWS Pricing Calculator](https://calculator.aws/#/) to estimate charges for the use of various AWS resources\.
+**노트**  
+AWS CDK 사용에 대한 요금은 없지만 Amazon EC2 인스턴스 실행 또는 Amazon S3 스토리지 사용과 같은 AWS의 [요금이 부과되는 리소스](http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#chargeable-resources)의 생성 또는 사용에 대한 AWS 요금이 발생할 수 있습니다\. 다양한 AWS 리소스 사용 요금을 추정하려면 [AWS 요금 계산기] (https://calculator.aws/#/)를 사용하십시오\.
 
-## Contributing to the AWS CDK<a name="contributing"></a>
+## AWS CDK에 기여하기<a name="contributing"></a>
 
-Because the AWS CDK is open source, the team encourages you contribute to make it an even better tool\. For details, see [Contributing](https://github.com/awslabs/aws-cdk/blob/master/CONTRIBUTING.md)\.
+AWS CDK는 오픈소스이며 AWS CDK팀은 당신이 기여를 통해 CDK를 더 나은 도구로 만드는 것을 권장하고 있습니다\. 자세한 내용은 [기여하기](https://github.com/awslabs/aws-cdk/blob/master/CONTRIBUTING.md)를 참조하십시오\.
 
-## Additional documentation and resources<a name="additional_docs"></a>
+## 추가 문서 및 자료<a name="additional_docs"></a>
 
-In addition to this guide, the following are other resources available to AWS CDK users:
-+ [API Reference](https://docs.aws.amazon.com/cdk/api/latest)
-+ [AWS CDK Demo at re:Invent 2018](https://www.youtube.com/watch?v=Lh-kVC2r2AU)
-+ [AWS CDK Workshop](https://cdkworkshop.com/)
-+ [AWS CDK Examples](https://github.com/aws-samples/aws-cdk-examples)
-+ [AWS Developer Blog](https://aws.amazon.com/blogs/developer)
-+ [Gitter Channel](https://gitter.im/awslabs/aws-cdk)
-+ [Stack Overflow](https://stackoverflow.com/questions/tagged/aws-cdk)
-+ [GitHub Repository](https://github.com/awslabs/aws-cdk)
-  + [Issues](https://github.com/awslabs/aws-cdk/issues)
-  + [Examples](https://github.com/aws-samples/aws-cdk-examples)
-  + [Documentation Source](https://github.com/awsdocs/aws-cdk-user-guide/tree/master/doc_source)
-  + [License](https://github.com/awslabs/aws-cdk/blob/master/LICENSE)
-  + [Releases](https://github.com/awslabs/aws-cdk/releases)
-    + [AWS CDK OpenPGP key](pgp-keys.md#cdk_pgp_key)
-    + [JSII OpenPGP key](pgp-keys.md#jsii_pgp_key)
-+ [AWS CDK Sample for Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-cdk.html)
-+ [AWS CloudFormation Concepts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html)
-+ [AWS Glossary](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html)
+이 안내서 외에도, AWS CDK 사용자를 위한 다음과 같은 추가 자료들이 있습니다:
++ [API 참조 문서](https://docs.aws.amazon.com/cdk/api/latest)
++ [re:Invent 2018에서의 AWS CDK 데모](https://www.youtube.com/watch?v=Lh-kVC2r2AU)
++ [AWS CDK 워크숍](https://cdkworkshop.com/)
++ [AWS CDK 예제](https://github.com/aws-samples/aws-cdk-examples)
++ [AWS 개발자 블로그](https://aws.amazon.com/blogs/developer)
++ [Gitter 채널](https://gitter.im/awslabs/aws-cdk)
++ [스택 오버플로우](https://stackoverflow.com/questions/tagged/aws-cdk)
++ [GitHub 저장소](https://github.com/awslabs/aws-cdk)
+  + [이슈 목록](https://github.com/awslabs/aws-cdk/issues)
+  + [예제](https://github.com/aws-samples/aws-cdk-examples)
+  + [문서 저장소](https://github.com/awsdocs/aws-cdk-user-guide/tree/master/doc_source)
+  + [라이선스](https://github.com/awslabs/aws-cdk/blob/master/LICENSE)
+  + [릴리스](https://github.com/awslabs/aws-cdk/releases)
+    + [AWS CDK OpenPGP 키](pgp-keys.md#cdk_pgp_key)
+    + [JSII OpenPGP 키](pgp-keys.md#jsii_pgp_key)
++ [Cloud9로 작업하는 AWS CDK 샘플](https://docs.aws.amazon.com/cloud9/latest/user-guide/sample-cdk.html)
++ [AWS CloudFormation 개념](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html)
++ [AWS 용어 사전](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html)
 
-## About Amazon Web Services<a name="about_aws"></a>
+## Amazon Web Services에 대하여<a name="about_aws"></a>
 
-Amazon Web Services \(AWS\) is a collection of digital infrastructure services that developers can use when developing their applications\. The services include computing, storage, database, and application synchronization \(messaging and queuing\)\.
+Amazon Web Services \(AWS\)는 개발자가 애플리케이션을 개발할 때 사용할 수 있는 디지털 인프라 서비스 모음입니다\. 서비스에는 컴퓨팅, 스토리지, 데이터베이스 및 애플리케이션 동기화\(메시징 및 대기열\)가 포함됩니다\.
 
-AWS uses a pay\-as\-you\-go service model\. You are charged only for the services that you — or your applications — use\. Also, to make AWS useful as a platform for prototyping and experimentation, AWS offers a free usage tier, in which services are free below a certain level of usage\. For more information about AWS costs and the free usage tier, see [Test\-Driving AWS in the Free Usage Tier](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html)\.
+AWS는 pay\-as\-you\-go 서비스 모델을 사용합니다\. 귀하 또는 귀하의 응용 프로그램이 사용하는 서비스에 대해서만 요금이 청구됩니다. 또한, AWS를 프로토 타이핑 및 실험을 위한 플랫폼으로 유용하게 사용할 수 있도록, 특정 조건에서는 요금이 청구되지 않는 무료 사용 등급을 제공합니다\. AWS 비용 및 무료 사용 등급에 대한 자세한 내용은 [무료 사용 등급에서의 AWS 테스트\-드라이빙](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html)을 참조하십시오\.
 
-To obtain an AWS account, go to [aws\.amazon\.com](https://aws.amazon.com), and then choose **Create an AWS Account**\.
+AWS 계정을 얻으려면 [aws\.amazon\.com](https://aws.amazon.com)으로 이동한 다음 **AWS 계정 생성**을 선택하십시오\.
