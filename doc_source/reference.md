@@ -1,4 +1,4 @@
-# API reference<a name="reference"></a>
+# API 참조 문서<a name="reference"></a>
 
 The [API Reference](https://docs.aws.amazon.com/cdk/api/latest) contains information about the AWS CDK libraries\.
 
