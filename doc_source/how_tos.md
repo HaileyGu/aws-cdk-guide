@@ -1,3 +1,3 @@
-# AWS CDK how\-tos<a name="how_tos"></a>
+# AWS CDK 작업 방법들<a name="how_tos"></a>
 
-This section contains short code examples that show you how to accomplish a task using the AWS CDK\.
+이 장에는 AWS CDK를 사용하여 작업을 수행하는 방법을 보여주는 간단한 코드 예제가 포함되어 있습니다\.
