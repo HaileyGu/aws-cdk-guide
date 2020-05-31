@@ -1,24 +1,26 @@
-# Runtime context<a name="context"></a>
+# 런타임 컨텍스트<a name="context"></a>
 
-Context values are key\-value pairs that can be associated with a stack or construct\. The AWS CDK uses context to cache information from your AWS account, such as the Availability Zones in your account or the Amazon Machine Image \(AMI\) IDs used to start your instances\. [Feature flags](featureflags.md) are also context values\. You can create your own context values for use by your apps or constructs\.
+컨텍스트 값은 스택 또는 컨스트럭트와 연관 될 수있는 키\-값의 쌍입니다\. AWS CDK는 컨텍스트를 사용하여 계정의 가용 영역 또는 인스턴스를 시작하는 데 사용 되는 Amazon 머신 이미지 \(AMI\) ID와 같은 AWS 계정의 정보를 캐시합니다\. [기능 플래그](featureflags.md)도 컨텍스트 값입니다. 앱이나 컨스트럭트에 사용할 고유 한 컨텍스트 값을 만들 수 있습니다.
 
-## Construct context<a name="context_construct"></a>
+## 컨스트럭트의 컨텍스트<a name="context_construct"></a>
 
-Context values are made available to your AWS CDK app in six different ways:
-+ Automatically from the current AWS account\.
-+ Through the \-\-context option to the cdk command\.
-+ In the project's `cdk.context.json` file\.
-+ In the `context` key of the project's `cdk.json` file\.
-+ In the `context` key of your `~/cdk.json` file\.
-+ In your AWS CDK app using the `construct.node.setContext` method\.
+컨텍스트 값은 6 가지 방법으로 AWS CDK 앱에 제공할 수 있습니다:
++ 현재 AWS 계정에서 자동으로\.
++ Cdk cli 명령줄의 \-\-context 옵션을 통해서\.
++ 프로젝트의 `cdk.context.json` 파일로부터\.
++ 프로젝트의 `cdk.json` 파일의 `context` 키에서\.
++ `~/cdk.json` 파일의 `context` 키에서\.
++ AWS CDK 앱에서 `construct.node.setContext` 메소드를 사용하여\.
 
-The project file `cdk.context.json` is where the AWS CDK caches context values retrieved from your AWS account\. This practice avoids unexpected changes to your deployments when, for example, a new Amazon Linux AMI is released, changing your Auto Scaling group\. The AWS CDK does not write context data to any of the other files listed\. 
+AWS CDK는 프로젝트 내의 `cdk.context.json` 파일에 AWS 계정에서 검색 한 컨텍스트 값을 캐시하여 저장합니다\. 이 방법은 배포에 예기치 않은 변경이 발생하지 않도록 하는데, 예를들면, 새로운 Amazon Linux AMI가 릴리스되어 Auto Scaling 그룹을 변경하는 경우입니다\. AWS CDK는 목록에 있는 다른 파일에는 컨텍스트 데이터를 쓰지 않습니다\.
 
-We recommend that your project's context files be placed under version control along with the rest of your application, as the information in them is part of your app's state and is critical to being able to synthesize and deploy consistently\.
+프로젝트의 컨텍스트 파일은 나머지 응용 프로그램과 함께 버전 제어하에 배치하는 것이 좋습니다. 해당 정보는 앱 상태의 일부로 취급하여 항상 일관성 있게 합성하고 배포 할 수 있어야합니다 \.
 
 Context values are scoped to the construct that created them; they are visible to child constructs, but not to siblings\. Context values set by the AWS CDK Toolkit \(the cdk command\), whether automatically, from a file, or from the \-\-context option, are implicitly set on the `App` construct, and so are visible to every construct in the app\.
 
-You can get a context value using the `construct.node.tryGetContext` method\. If the requested entry is not found on the current construct or any of its parents, the result is `undefined` \(or your language's equivalent, such as `None` in Python\)\.
+컨텍스트의 값은 컨텍스트를 생성하는 컨스트럭트의 범위안에 있어야 합니다; 컨텍스트의 값은 자식 컨스트럭트에서는 보이고 하고, 형제 컨스트럭트에서는 보이지 않습니다\. AWS CDK Toolkit \(the cdk command\) 를 통해  파일에서 자동으로 읽어오거나, \-\-context 옵션을 사용하여 설정된 컨텍스트의 값은, `App` 컨스트럭트에 암시적으로 설정되며, 앱 내부에 있는 모든 컨스트럭트에서 볼 수 있습니다\.
+
+`construct.node.tryGetContext` 메소드를 사용하여 컨텍스트 값을 얻을 수 있습니다\. 요청 된 엔트리가 현재 컨스트럭트나나 부모 컨스트럭트에서 발견되지 않으면 `undefined` 가 반환됩니다\. \(혹은 Python의 `None`처럼 이 언어에 따라 그에 준하는 값으로 설정됩니다\.\)
 
 ## Context methods<a name="context_methods"></a>
 
