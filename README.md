@@ -15,9 +15,6 @@ AWS CDK 개발자 안내서의 개별 페이지 하단에 있는 피드백 링�
 
 ## 프로젝트 보드
 
-Have a look at the AWS CDK Developer Guide [Project Board](https://github.com/awsdocs/aws-cdk-guide/projects/1) 
-to see what we're working on at the moment. Note that items on the Wishlist may not be in any particular order. You can help us prioritize our work by +1'ing issues that are important to you.
-
 현재 진행 중인 작업은 AWS CDK 개발자 안내서의 [프로젝트 보드] (https://github.com/awsdocs/aws-cdk-guide/projects/1)에서 확인할 수 있습니다.
 위시리스트에 있는 아이템 목록은 특정 순서를 따라 정렬된 것은 아닙니다. 당신이 생각하는 중요한 문제에 대해 +1을 클릭하여 이 저장소의 작업에 대하여 우선순위를 결정하는 데 도움을 줄 수 있습니다.
 
